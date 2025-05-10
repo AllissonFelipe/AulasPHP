@@ -189,3 +189,66 @@ if($condicao){
     }
 ?>
 ```
+
+## Uso dos Operadores Lógicos - AND, OR , NOT
+
+Podemos utilizar mais de uma condição no `IF` que são elas:
+
+### **Exemplo com AND** **`(&&)`**
+
+O operador `&&` (E lógico) exige que **TODAS** as condições sejam verdadeiras para o bloco de dentro do `IF` seja executado.
+
+```php
+<?php
+    $valor = 10;
+    $limiteInferior = 5;
+    $limiteSuperior = 15;
+
+    echo "Valor: {$valor} <br>";
+    echo "Limite Inferior: {$limiteInferior} <br>";
+    echo "Limite Superior: {$limiteSuperior} <br>";
+
+    if($valor > $limiteInferior && $valor < $limiteSuperior) {
+        echo "O valor está dentro do limite definido.";
+    } else {
+        echo "O valor NÃO está dentro do intervalo definido";
+    }
+?>
+```
+
+### **Exemplo com OR `(||)`**
+
+O operador `||` (OU lógico) exige que pelo menos uma das condições seja verdadeira para que o bloco do código dentro do `IF` seja executado.
+
+```php
+<?php
+    $diaSemana = "Domingo";
+    $ehFeriado = false;
+
+    echo "Dia da semana: " . $diaSemana . "<br>";
+    echo "É feriado? " . ($ehFeriado ? "Sim" : "Não") . "<br>";
+
+    if($diaSemana == "Sábado" || $diaSemana == "Domingo" || $ehFeriado == true) {
+        echo "Hoje é um de descanso (fim de semana ou feriado)";
+    } else {
+        echo "Hoje é um dia útil. Não existe trabalho ruim. Ruim é ter que trabalhar!";
+    }
+?>
+```
+
+### **Exemplo com NOT `(!)`**
+
+O operador NOT `!` (NÃO lógico) inverte o valor de uma condição booleana. Se a condição é `true`, `!condicao` se torna `false` e vice-versa.
+
+```php
+<?php
+    $usuarioLogado = false;
+
+    //Se NÃO usuário logado
+    if(!$usuarioLogado) {
+        echo "Atenção! Usuário NÃO logado.";
+    } else {
+        echo "Bem-vindo de volta!";
+    }
+?>
+```
