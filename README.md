@@ -252,3 +252,97 @@ O operador NOT `!` (NÃO lógico) inverte o valor de uma condição booleana. Se
     }
 ?>
 ```
+
+## SWITCH
+
+A estrutura `switch` (também conhecida como “escolha caso” em português) é uma combinação de controle de fluxo presente em PHP e também em outras linguagens. Oferece uma maneira mais clara, e as vezes, mais eficiente de se comparar uma variável ou expressão com uma série de valores diferentes e executar um bloco de código específico caso uma correspondência seja encontrada.  
+
+### Exemplo
+
+```php
+<?php
+
+    $diaSemana = date_default_timezone_set('America/Sao_Paulo');
+    $diaSemana = date('w');
+    echo $diaSemana;
+    switch ($diaSemana) {
+        case 0:
+            echo "Hoje é Domingo";
+            break;
+        case 1:
+            echo "Hoje é Segunda";
+            break;
+        case 2:
+            echo "Hoje é Terça";
+            break;
+        case 3:
+            echo "Hoje é Quarta";
+            break;
+        case 4:
+            echo "Hoje é Quinta";
+            break;
+        case 5:
+            echo "Hoje é Sexta";
+            break;
+        case 6:
+            echo "Hoje é Sábado";
+            break;
+        default:
+            echo "Dia Inválido. Por favor, insira um número de 1 a 7.";
+            break;
+    }
+?>
+```
+
+## WHILE / DO…WHILE / FOR
+
+As estruturas de repetição (ou laços, ou loops) `while`, `do…while` e `for` são fundamentais em PHP para executar um bloco de código várias vezes, até que uma determina condição seja satisfeita ou um número específico de iterações seja alcançado.
+
+### **`WHILE` (Enquanto)**
+
+O laço `while` é o mais simples dos laços. Executa um bloco de código repetidamente enquanto uma condição específica for verdadeira.
+
+```php
+<?php
+    $contador = 0;
+
+    //enquanto(condição, enquanto condição for verdadeira)
+    while($contador < 5) {
+        //é executado este bloco
+        echo "Número: " . ($contador+1) . "<br>";
+        $contador++;
+    }
+    //bloco executado após sair do loop while
+    echo "Fim do loop! <br>";
+?>
+```
+
+### `DO…WHILE` (Faça…Enquanto)
+
+O laço `do…while` é semelhante ao `while`, com uma diferença crucial: o bloco de código é executado **pelo menos uma vez**, e a condição é verificada após a execução do bloco.
+
+```php
+<?php
+    $contador = 0;
+
+    do{
+        echo "Número: " . $contador . "<br>";
+        $contador--;
+    } while($contador >= 1);
+
+    echo "Fim do loop do...while";
+?>
+```
+
+### `FOR` (Para)
+
+O laço `for` é geralmente usado quando você sabe de antemão quantas vezes o bloco de código precisa ser executado. Ele **combina inicialização, condição e incremento/decremento** em uma única linha, tornando o código mais conciso para esse tipo de situação.
+
+```php
+<?php
+    for($i = 1; $i <= 5; $i++) {
+        echo "Número: " . $i . "<br>";
+    }
+    echo "Acabou o laço FOR.";
+?>
+```
