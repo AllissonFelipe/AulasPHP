@@ -346,3 +346,63 @@ O laço `for` é geralmente usado quando você sabe de antemão quantas vezes o 
     echo "Acabou o laço FOR.";
 ?>
 ```
+
+## Array
+
+Em PHP, um “array” (arranjo) é uma estrutura de dados fundamental e versátil, pois uma array nada mais que uma variável especial que pode conter múltiplos valores sob um único nome.
+
+Os valores armazenados numa array pode ser de qualquer tipo de dados que o PHP suporta: inteiros, floats (números de ponto flutuantes), strings, booleanos, outros arrays (criando arrays multidimensionais ou também chamados de matrizes), objetos, e até mesmo null. Pode misturar diferentes tipo de valores no mesmo array. 
+
+### Vetor
+
+Um “vetor”, no contexto PHP, é geralmente entendido como um arrays unidimensional que utiliza principalmente chaves numéricas inteiras e sequenciais para aceder aos seus elementos. É uma lista simples de valores.
+
+```php
+<?php
+
+    //vetor d frutas
+    $frutas = ["Maça", "Banana", "Laranja"];
+    //as chaves ou índces são adicionadas 0, 1, 2 automaticamente
+
+    //exemplo com vetor de números
+    $numeros = [10, 20, 30, 40, 50];
+
+    //vetor com tipos mistos
+    $info = [1, "Olá mundo", true];
+
+    //acessando o valor
+    echo $frutas[2] . "<br>"; // saída será laranja
+    echo $frutas[0] . "<br>"; // saída será maça
+
+    //modificando valores array
+    $frutas[0] = "Uva" . "<br>";
+
+    echo $frutas[0] . "Alteramos o valor do índice zero. <br>";
+
+    //percorrer o vetor
+    //duas formas for foreach (simples)
+
+    $nomes = ["Ana", "Bruno", "Carlos", "Luciana", "Luiz"];
+
+    //com FOR precisamos usar a função (comando) count() para obter o tamanho
+    echo "<br>Nomes (for): <br>";
+    $quantidade = count($nomes);
+
+    //usando loop for
+    for ($i = 0; $i < $quantidade; $i++) {
+        echo $nomes[$i] . "<br>";
+    }
+
+    echo "<br><hr>";
+    //usando loop foreach bem mais simples
+    echo "Nomes (foreach): <br>";
+    foreach($nomes as $nome) {
+        echo $nome . "<br>";
+    } 
+    
+?>
+```
+
+## Matrizes
+
+Uma “matriz” em PHP é uma array, que contém outras arrays como seus elementos. O caso mais comum é um array bidimensional (um array de arrays), que pode ser usado para representar estruturas tabulares como tabelas de uma base de dados, grids, ou listas de registros onde cada registro é ele um próprio array.
