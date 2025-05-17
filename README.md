@@ -403,6 +403,52 @@ Um “vetor”, no contexto PHP, é geralmente entendido como um arrays unidimen
 ?>
 ```
 
-## Matrizes
+### Matrizes
 
-Uma “matriz” em PHP é uma array, que contém outras arrays como seus elementos. O caso mais comum é um array bidimensional (um array de arrays), que pode ser usado para representar estruturas tabulares como tabelas de uma base de dados, grids, ou listas de registros onde cada registro é ele um próprio array.
+Uma “matriz” em PHP é uma array, que contém outras arrays como seus elementos. O caso mais comum é um array bidimensional (um array de arrays), que pode ser usado para representar estruturas tabulares como tabelas de uma base de dados, grids, ou listas de registros onde cada registro é ele um próprio array. 
+
+```php
+<?php
+
+    // Representa uma "grelha" 3x3 
+    $grelha = [
+        [1, 2, 3], //linha 0 - posição 2 [0, 1]
+        [4, 5, 6],  //linha 1
+        [7, 8, 9] //linha 2
+    ];
+
+    $alunos = [
+        ["nome" => "Rita", "idade" => 20, "curso" => "T.I"], // aluno 0
+        ["nome" => "Carlos", "idade" => 43, "curso" => "ADM"], // aluno 1
+        ["nome" => "Sofia", "idade" => 19, "curso" => "Artes"] // aluno 2
+    ];
+    echo $grelha[1][1] . "<br>"; // saída 5 (linha 1, coluna 1)
+    echo $grelha[2][1] . "<br>"; // saída 8 (linha 2, coluna 1)
+
+    // acessar o dado nome "Rita" e a sua respectiva idade
+    echo $alunos[0]["nome"] . "<br>";
+    echo $alunos[0]["curso"] . "<br><hr>";
+    // mudar o curso da Rita
+    $alunos[0]["curso"] = "Educação Física";
+    echo $alunos[0]["curso"] . "<br><hr>";
+
+    //percorrer a matriz alunos. Normalmente usamos o foreach
+    foreach ($alunos as $aluno) {
+        echo "Aluno(a): " . $aluno["nome"] . " | ";
+        echo "Idade: " . $aluno["idade"] . " | ";
+        echo "Curso: " . $aluno["curso"] . "<br>";
+    }
+?>
+```
+
+## Funções
+
+Uma função é um bloco de código nomeado que realiza um tarefa específica. Pode pensar numa função como uma “sub-rotina” ou um “procedimento”. Uma vez definida, uma função pode ser “chamada” (ou “invocada”) várias vezes a partir de diferentes partes do seu script, evitando a necessidade de reescrever o mesmo código repetidamente.
+
+### **Motivos para usarmos as funções:**
+
+- **Reutilização de código:** Escreve o código uma vez e usa-o em múltiplos locais.
+- **Organização:** Divide um script complexo em partes menores e mais manejáveis. Cada função lida com uma tarefa específica.
+- **Legibilidade:** Scripts bem estruturados com funções são mais fáceis de ler e entender.
+- Manutenção: Se precisar de alterar a lógica de uma tarefa específica, só precisa de  modificar a função correspondente, em vez de procurar por todas ocorrências desse código no script.
+- Abstração: Pode usar uma função sem precisar saber os detalhe exatos da sua implementação interna, apenas o que ela faz e que tipo de entrada (parâmetros) ela espera e que tipo de saída (retorno) ela produz.
