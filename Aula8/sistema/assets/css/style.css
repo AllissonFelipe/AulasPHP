@@ -1,0 +1,33 @@
+body {
+    background-color: rgb(204, 255, 255);
+    font-family: "Montserrat", sans-serif;
+}
+#tamanho-container {
+    width: 800px;
+    background-color: rgb(227, 255, 255);
+    margin: 20px auto;
+    min-height: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+    border-radius: 10px;
+    padding: 20px;
+}
+h3 {
+    margin: 20px 0;
+    font-family: "Roboto", sans-serif;
+    color: rgb(0, 7, 107);
+}
+.destaque {
+    font-weight: bold;
+}
+.alinha-botao {
+    text-align: right;
+    width: 100%;
+}
+.botao {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+}
+.botao:hover {
+    background-color: rgb(83, 83, 83);
+}
