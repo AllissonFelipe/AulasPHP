@@ -1,0 +1,48 @@
+body {
+    background-color: rgb(204, 255, 255);
+    font-family: "Montserrat", sans-serif;
+}
+#tamanho-container {
+    width: 100%;
+    background-color: rgb(227, 255, 255);
+    margin: 20px auto;
+    min-height: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.21);
+    border-radius: 10px;
+    padding: 20px;
+}
+.card-title {
+    font-weight: bold;
+}
+h3 {
+    margin: 20px 0;
+    font-family: "Roboto", sans-serif;
+    color: rgb(0, 7, 107);
+}
+.destaque {
+    font-weight: bold;
+}
+.alinha-botao {
+    text-align: right;
+    width: 100%;
+}
+.estilo-botao {
+    color: black;
+    background: #5efaff;
+    background: linear-gradient(90deg, rgba(94, 250, 255, 1) 0%, rgba(24, 230, 237, 1) 36%, rgba(0, 185, 191, 1) 100%);
+    border: 1px solid black;
+    font-weight: 600;
+}
+.estilo-botao:hover {
+    color: white;
+    font-weight: 600;
+    border: 1px solid black;
+}
+.botao {
+    background-color: black;
+    font-weight: bold;
+    color: white;
+}
+.botao:hover {
+    background-color: rgb(83, 83, 83);
+}
